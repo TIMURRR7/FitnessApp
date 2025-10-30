@@ -1,38 +1,38 @@
-#ifndef ACTIVITY_HPP
+п»ї#ifndef ACTIVITY_HPP
 #define ACTIVITY_HPP
 
 #include <string>
 #include <set>
 #include "ProfileManager.hpp" 
 
-// Класс Activity: Описание упражнения
+// РљР»Р°СЃСЃ Activity: РћРїРёСЃР°РЅРёРµ СѓРїСЂР°Р¶РЅРµРЅРёСЏ
 class Activity {
 public:
-    enum class MuscleGroup { CHEST, BACK, LEGS }; // Мышечные группы 
-    enum class ActivityType { STRENGTH, CARDIO }; // Тип активности
+    enum class MuscleGroup { CHEST, BACK, LEGS }; // РњС‹С€РµС‡РЅС‹Рµ РіСЂСѓРїРїС‹ 
+    enum class ActivityType { STRENGTH, CARDIO }; // РўРёРї Р°РєС‚РёРІРЅРѕСЃС‚Рё
 
-    // Конструктор: Инициализирует упражнение
+    // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ: РРЅРёС†РёР°Р»РёР·РёСЂСѓРµС‚ СѓРїСЂР°Р¶РЅРµРЅРёРµ
     Activity(const std::string& id, const std::string& title, const std::set<MuscleGroup>& targetedMuscles,
         ActivityType category, const std::set<ProfileManager::Equipment>& requiredEquipment, ProfileManager::Level complexity,
         const std::string& description);
 
-    // Деструктор
+    // Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
     ~Activity();
 
-    // Метод: Проверяет, подходит ли упражнение пользователю
+    // РњРµС‚РѕРґ: РџСЂРѕРІРµСЂСЏРµС‚, РїРѕРґС…РѕРґРёС‚ Р»Рё СѓРїСЂР°Р¶РЅРµРЅРёРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЋ
     bool matchesUser(const ProfileManager& user) const;
 
-    // Метод: Возвращает оценку длительности
+    // РњРµС‚РѕРґ: Р’РѕР·РІСЂР°С‰Р°РµС‚ РѕС†РµРЅРєСѓ РґР»РёС‚РµР»СЊРЅРѕСЃС‚Рё
     int getDurationEstimate() const;
 
 private:
-    std::string id; // Идентификатор
-    std::string title; // Название
-    std::set<MuscleGroup> targetedMuscles; // Задействованные мышцы
-    ActivityType category; // Тип
-    std::set<ProfileManager::Equipment> requiredEquipment; // Необходимое оборудование
-    ProfileManager::Level complexity; // Сложность
-    std::string description; // Описание
+    std::string id; // РРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ
+    std::string title; // РќР°Р·РІР°РЅРёРµ
+    std::set<MuscleGroup> targetedMuscles; // Р—Р°РґРµР№СЃС‚РІРѕРІР°РЅРЅС‹Рµ РјС‹С€С†С‹
+    ActivityType category; // РўРёРї
+    std::set<ProfileManager::Equipment> requiredEquipment; // РќРµРѕР±С…РѕРґРёРјРѕРµ РѕР±РѕСЂСѓРґРѕРІР°РЅРёРµ
+    ProfileManager::Level complexity; // РЎР»РѕР¶РЅРѕСЃС‚СЊ
+    std::string description; // РћРїРёСЃР°РЅРёРµ
 };
 
 #endif

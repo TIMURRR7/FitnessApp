@@ -1,42 +1,42 @@
-#ifndef TRAININGSESSION_HPP
+п»ї#ifndef TRAININGSESSION_HPP
 #define TRAININGSESSION_HPP
 
 #include <string>
 #include <list>
 #include "ProfileManager.hpp" 
 
-// Класс TrainingSession: Тренировочная сессия
+// РљР»Р°СЃСЃ TrainingSession: РўСЂРµРЅРёСЂРѕРІРѕС‡РЅР°СЏ СЃРµСЃСЃРёСЏ
 class TrainingSession {
 public:
-    enum class WorkoutStatus { PLANNED, COMPLETED }; // Статус сессии
+    enum class WorkoutStatus { PLANNED, COMPLETED }; // РЎС‚Р°С‚СѓСЃ СЃРµСЃСЃРёРё
 
-    // Конструктор: Инициализирует сессию
+    // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ: РРЅРёС†РёР°Р»РёР·РёСЂСѓРµС‚ СЃРµСЃСЃРёСЋ
     TrainingSession(const std::string& id, const std::string& scheduledDate, int estDurationMin,
-        const std::string& sessionName, const std::list<std::string>& exerciseBlocks, // Упрощено
+        const std::string& sessionName, const std::list<std::string>& exerciseBlocks, // РЈРїСЂРѕС‰РµРЅРѕ
         WorkoutStatus currentStatus);
 
-    // Деструктор: Освобождает ресурсы
+    // Р”РµСЃС‚СЂСѓРєС‚РѕСЂ: РћСЃРІРѕР±РѕР¶РґР°РµС‚ СЂРµСЃСѓСЂСЃС‹
     ~TrainingSession();
 
-    // Метод: Начинает сессию
+    // РњРµС‚РѕРґ: РќР°С‡РёРЅР°РµС‚ СЃРµСЃСЃРёСЋ
     void beginSession();
 
-    // Метод: Завершает сессию с сохранением результатов 
+    // РњРµС‚РѕРґ: Р—Р°РІРµСЂС€Р°РµС‚ СЃРµСЃСЃРёСЋ СЃ СЃРѕС…СЂР°РЅРµРЅРёРµРј СЂРµР·СѓР»СЊС‚Р°С‚РѕРІ 
     void finishSession(const std::string& results);
 
-    // Метод: Переносит дату сессии
+    // РњРµС‚РѕРґ: РџРµСЂРµРЅРѕСЃРёС‚ РґР°С‚Сѓ СЃРµСЃСЃРёРё
     void shiftDate(const std::string& newScheduledDate);
 
-    // Метод: Рассчитывает сожжённые калории
+    // РњРµС‚РѕРґ: Р Р°СЃСЃС‡РёС‚С‹РІР°РµС‚ СЃРѕР¶Р¶С‘РЅРЅС‹Рµ РєР°Р»РѕСЂРёРё
     int calcBurnedCalories(const ProfileManager& user) const;
 
 private:
-    std::string id; // Идентификатор
-    std::string scheduledDate; // Запланированная дата
-    int estDurationMin; // Оценка длительности в минутах
-    std::string sessionName; // Название сессии
-    std::list<std::string> exerciseBlocks; // Блоки упражнений (упрощённо)
-    WorkoutStatus currentStatus; // Текущий статус
+    std::string id; // РРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ
+    std::string scheduledDate; // Р—Р°РїР»Р°РЅРёСЂРѕРІР°РЅРЅР°СЏ РґР°С‚Р°
+    int estDurationMin; // РћС†РµРЅРєР° РґР»РёС‚РµР»СЊРЅРѕСЃС‚Рё РІ РјРёРЅСѓС‚Р°С…
+    std::string sessionName; // РќР°Р·РІР°РЅРёРµ СЃРµСЃСЃРёРё
+    std::list<std::string> exerciseBlocks; // Р‘Р»РѕРєРё СѓРїСЂР°Р¶РЅРµРЅРёР№ (СѓРїСЂРѕС‰С‘РЅРЅРѕ)
+    WorkoutStatus currentStatus; // РўРµРєСѓС‰РёР№ СЃС‚Р°С‚СѓСЃ
 };
 
 #endif

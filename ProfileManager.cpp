@@ -1,7 +1,7 @@
-#include "ProfileManager.hpp"
+п»ї#include "ProfileManager.hpp"
 #include <cmath>
 
-// Конструктор: Инициализирует все поля класса
+// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ: РРЅРёС†РёР°Р»РёР·РёСЂСѓРµС‚ РІСЃРµ РїРѕР»СЏ РєР»Р°СЃСЃР°
 ProfileManager::ProfileManager(const std::string& id, const std::string& username, int age, Gender gender, int heightCm,
     double currentWeightKg, Goal targetGoal, Level fitnessLevel,
     const std::list<Weekday>& workoutDaysPref, const std::set<Equipment>& availableEquipment,
@@ -10,20 +10,20 @@ ProfileManager::ProfileManager(const std::string& id, const std::string& usernam
     targetGoal(targetGoal), fitnessLevel(fitnessLevel), workoutDaysPref(workoutDaysPref),
     availableEquipment(availableEquipment), alertsEnabled(alertsEnabled) {}
 
-// Деструктор
+// Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
 ProfileManager::~ProfileManager() {}
 
-// Метод: Обновляет текущий вес
+// РњРµС‚РѕРґ: РћР±РЅРѕРІР»СЏРµС‚ С‚РµРєСѓС‰РёР№ РІРµСЃ
 void ProfileManager::changeWeight(double newWeight) {
     currentWeightKg = newWeight;
 }
 
-// Метод: Обновляет цель
+// РњРµС‚РѕРґ: РћР±РЅРѕРІР»СЏРµС‚ С†РµР»СЊ
 void ProfileManager::updateGoal(Goal newGoal) {
     targetGoal = newGoal;
 }
 
-// Метод: Рассчитывает BMI по формуле вес / (рост^2)
+// РњРµС‚РѕРґ: Р Р°СЃСЃС‡РёС‚С‹РІР°РµС‚ BMI РїРѕ С„РѕСЂРјСѓР»Рµ РІРµСЃ / (СЂРѕСЃС‚^2)
 double ProfileManager::calculateBMI() const {
     double heightM = heightCm / 100.0;
     return currentWeightKg / (heightM * heightM);

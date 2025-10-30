@@ -1,24 +1,24 @@
-#include "FunMascot.hpp"
+п»ї#include "FunMascot.hpp"
 
-// Конструктор: Инициализирует поля
+// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ: РРЅРёС†РёР°Р»РёР·РёСЂСѓРµС‚ РїРѕР»СЏ
 FunMascot::FunMascot(const std::string& userId, MascotMood currentMood, int experiencePoints,
     const std::set<std::string>& unlockedSkins)
     : userId(userId), currentMood(currentMood), experiencePoints(experiencePoints), unlockedSkins(unlockedSkins) {}
 
-// Деструктор
+// Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
 FunMascot::~FunMascot() {}
 
-// Метод: Реакция на сессию (заглушка)
+// РњРµС‚РѕРґ: Р РµР°РєС†РёСЏ РЅР° СЃРµСЃСЃРёСЋ (Р·Р°РіР»СѓС€РєР°)
 std::string FunMascot::respondToSession(TrainingSession::WorkoutStatus outcome) const {
-    return "Good job!"; // Пример
+    return "Good job!"; // РџСЂРёРјРµСЂ
 }
 
-// Метод: Добавление опыта
+// РњРµС‚РѕРґ: Р”РѕР±Р°РІР»РµРЅРёРµ РѕРїС‹С‚Р°
 void FunMascot::addExperience(int points) {
     experiencePoints += points;
 }
 
-// Метод: Генерирует мотивацию (заглушка)
+// РњРµС‚РѕРґ: Р“РµРЅРµСЂРёСЂСѓРµС‚ РјРѕС‚РёРІР°С†РёСЋ (Р·Р°РіР»СѓС€РєР°)
 std::string FunMascot::generateMotivation(const ProfileManager& user, const ProgressTracker& tracker) const {
-    return "Keep going!"; // Пример
+    return "Keep going!"; // РџСЂРёРјРµСЂ
 }

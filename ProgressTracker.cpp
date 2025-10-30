@@ -1,19 +1,19 @@
-#include "ProgressTracker.hpp"
+п»ї#include "ProgressTracker.hpp"
 
-// Конструктор: Инициализирует поля
+// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ: РРЅРёС†РёР°Р»РёР·РёСЂСѓРµС‚ РїРѕР»СЏ
 ProgressTracker::ProgressTracker(const std::string& userId, const std::list<std::pair<std::string, double>>& weightLog,
     const std::list<std::string>& sessionHistory, int activeStreak)
     : userId(userId), weightLog(weightLog), sessionHistory(sessionHistory), activeStreak(activeStreak) {}
 
-// Деструктор
+// Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
 ProgressTracker::~ProgressTracker() {}
 
-// Метод: Записывает исход сессии
+// РњРµС‚РѕРґ: Р—Р°РїРёСЃС‹РІР°РµС‚ РёСЃС…РѕРґ СЃРµСЃСЃРёРё
 void ProgressTracker::logSessionOutcome(const std::string& outcome) {
     sessionHistory.push_back(outcome);
 }
 
-// Метод: Рассчитывает соблюдение плана(заглушка)
+// РњРµС‚РѕРґ: Р Р°СЃСЃС‡РёС‚С‹РІР°РµС‚ СЃРѕР±Р»СЋРґРµРЅРёРµ РїР»Р°РЅР°(Р·Р°РіР»СѓС€РєР°)
 double ProgressTracker::calcCompliance(const std::string& interval) const {
-    return 90.0; // Пример
+    return 90.0; // РџСЂРёРјРµСЂ
 }

@@ -1,32 +1,32 @@
-#ifndef MEALFORMULA_HPP
+п»ї#ifndef MEALFORMULA_HPP
 #define MEALFORMULA_HPP
 
 #include <string>
 #include <list>
 #include "ProfileManager.hpp" 
 
-// Класс MealFormula: Рецепт блюда
+// РљР»Р°СЃСЃ MealFormula: Р РµС†РµРїС‚ Р±Р»СЋРґР°
 class MealFormula {
 public:
-    // Конструктор: Инициализирует рецепт
+    // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ: РРЅРёС†РёР°Р»РёР·РёСЂСѓРµС‚ СЂРµС†РµРїС‚
     MealFormula(const std::string& id, const std::string& dishName, const std::list<std::string>& componentList,
         const std::string& nutritionPerPortion, int prepTimeMin);
 
-    // Деструктор
+    // Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
     ~MealFormula();
 
-    // Метод: Пересчитывает нутриенты на порции 
+    // РњРµС‚РѕРґ: РџРµСЂРµСЃС‡РёС‚С‹РІР°РµС‚ РЅСѓС‚СЂРёРµРЅС‚С‹ РЅР° РїРѕСЂС†РёРё 
     std::string adjustPortions(double portionFactor) const;
 
-    // Метод: Проверяет соответствие предпочтениям пользователя
+    // РњРµС‚РѕРґ: РџСЂРѕРІРµСЂСЏРµС‚ СЃРѕРѕС‚РІРµС‚СЃС‚РІРёРµ РїСЂРµРґРїРѕС‡С‚РµРЅРёСЏРј РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
     bool fitsUserPrefs(const ProfileManager& user) const;
 
 private:
-    std::string id; // Идентификатор
-    std::string dishName; // Название блюда
-    std::list<std::string> componentList; // Ингредиенты
-    std::string nutritionPerPortion; // Нутриенты на порцию
-    int prepTimeMin; // Время приготовления в минутах
+    std::string id; // РРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ
+    std::string dishName; // РќР°Р·РІР°РЅРёРµ Р±Р»СЋРґР°
+    std::list<std::string> componentList; // РРЅРіСЂРµРґРёРµРЅС‚С‹
+    std::string nutritionPerPortion; // РќСѓС‚СЂРёРµРЅС‚С‹ РЅР° РїРѕСЂС†РёСЋ
+    int prepTimeMin; // Р’СЂРµРјСЏ РїСЂРёРіРѕС‚РѕРІР»РµРЅРёСЏ РІ РјРёРЅСѓС‚Р°С…
 };
 
 #endif

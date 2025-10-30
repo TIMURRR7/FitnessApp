@@ -1,20 +1,20 @@
-#include "MealFormula.hpp"
+п»ї#include "MealFormula.hpp"
 
-// Конструктор: Инициализирует поля
+// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ: РРЅРёС†РёР°Р»РёР·РёСЂСѓРµС‚ РїРѕР»СЏ
 MealFormula::MealFormula(const std::string& id, const std::string& dishName, const std::list<std::string>& componentList,
     const std::string& nutritionPerPortion, int prepTimeMin)
     : id(id), dishName(dishName), componentList(componentList), nutritionPerPortion(nutritionPerPortion),
     prepTimeMin(prepTimeMin) {}
 
-// Деструктор: Пустой
+// Р”РµСЃС‚СЂСѓРєС‚РѕСЂ: РџСѓСЃС‚РѕР№
 MealFormula::~MealFormula() {}
 
-// Метод: Пересчёт порций (заглушка)
+// РњРµС‚РѕРґ: РџРµСЂРµСЃС‡С‘С‚ РїРѕСЂС†РёР№ (Р·Р°РіР»СѓС€РєР°)
 std::string MealFormula::adjustPortions(double portionFactor) const {
-    return "Adjusted"; // Пример
+    return "Adjusted"; // РџСЂРёРјРµСЂ
 }
 
-// Метод: Проверка предпочтений (заглушка)
+// РњРµС‚РѕРґ: РџСЂРѕРІРµСЂРєР° РїСЂРµРґРїРѕС‡С‚РµРЅРёР№ (Р·Р°РіР»СѓС€РєР°)
 bool MealFormula::fitsUserPrefs(const ProfileManager& user) const {
     return true;
 }

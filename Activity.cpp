@@ -1,23 +1,23 @@
-#include "Activity.hpp"
+п»ї#include "Activity.hpp"
 #include <algorithm>
 
-// Конструктор: Инициализирует все поля
+// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ: РРЅРёС†РёР°Р»РёР·РёСЂСѓРµС‚ РІСЃРµ РїРѕР»СЏ
 Activity::Activity(const std::string& id, const std::string& title, const std::set<MuscleGroup>& targetedMuscles,
     ActivityType category, const std::set<ProfileManager::Equipment>& requiredEquipment, ProfileManager::Level complexity,
     const std::string& description)
     : id(id), title(title), targetedMuscles(targetedMuscles), category(category),
     requiredEquipment(requiredEquipment), complexity(complexity), description(description) {}
 
-// Деструктор
+// Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
 Activity::~Activity() {}
 
-// Метод: Проверяет наличие оборудования у пользователя
+// РњРµС‚РѕРґ: РџСЂРѕРІРµСЂСЏРµС‚ РЅР°Р»РёС‡РёРµ РѕР±РѕСЂСѓРґРѕРІР°РЅРёСЏ Сѓ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 bool Activity::matchesUser(const ProfileManager& user) const {
     return std::includes(user.getAvailableEquipment().begin(), user.getAvailableEquipment().end(),
         requiredEquipment.begin(), requiredEquipment.end());
 }
 
-// Метод: Возвращает фиксированную оценку длительности (заглушка)
+// РњРµС‚РѕРґ: Р’РѕР·РІСЂР°С‰Р°РµС‚ С„РёРєСЃРёСЂРѕРІР°РЅРЅСѓСЋ РѕС†РµРЅРєСѓ РґР»РёС‚РµР»СЊРЅРѕСЃС‚Рё (Р·Р°РіР»СѓС€РєР°)
 int Activity::getDurationEstimate() const {
-    return 10; // Примерное значение
+    return 10; // РџСЂРёРјРµСЂРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ
 }

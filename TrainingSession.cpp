@@ -1,31 +1,31 @@
-#include "TrainingSession.hpp"
+п»ї#include "TrainingSession.hpp"
 
-// Конструктор: Инициализирует все поля
+// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ: РРЅРёС†РёР°Р»РёР·РёСЂСѓРµС‚ РІСЃРµ РїРѕР»СЏ
 TrainingSession::TrainingSession(const std::string& id, const std::string& scheduledDate, int estDurationMin,
     const std::string& sessionName, const std::list<std::string>& exerciseBlocks,
     WorkoutStatus currentStatus)
     : id(id), scheduledDate(scheduledDate), estDurationMin(estDurationMin), sessionName(sessionName),
     exerciseBlocks(exerciseBlocks), currentStatus(currentStatus) {}
 
-// Деструктор
+// Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
 TrainingSession::~TrainingSession() {}
 
-// Метод: Начинает сессию (устанавливает статус PLANNED)
+// РњРµС‚РѕРґ: РќР°С‡РёРЅР°РµС‚ СЃРµСЃСЃРёСЋ (СѓСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ СЃС‚Р°С‚СѓСЃ PLANNED)
 void TrainingSession::beginSession() {
     currentStatus = WorkoutStatus::PLANNED;
 }
 
-// Метод: Завершает сессию (устанавливает статус COMPLETED)
+// РњРµС‚РѕРґ: Р—Р°РІРµСЂС€Р°РµС‚ СЃРµСЃСЃРёСЋ (СѓСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ СЃС‚Р°С‚СѓСЃ COMPLETED)
 void TrainingSession::finishSession(const std::string& results) {
     currentStatus = WorkoutStatus::COMPLETED;
 }
 
-// Метод: Переносит дату
+// РњРµС‚РѕРґ: РџРµСЂРµРЅРѕСЃРёС‚ РґР°С‚Сѓ
 void TrainingSession::shiftDate(const std::string& newScheduledDate) {
     scheduledDate = newScheduledDate;
 }
 
-// Метод: Рассчитывает калории (заглушка)
+// РњРµС‚РѕРґ: Р Р°СЃСЃС‡РёС‚С‹РІР°РµС‚ РєР°Р»РѕСЂРёРё (Р·Р°РіР»СѓС€РєР°)
 int TrainingSession::calcBurnedCalories(const ProfileManager& user) const {
     return 500;
 }

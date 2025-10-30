@@ -1,58 +1,58 @@
-#ifndef PROFILEMANAGER_HPP
+п»ї#ifndef PROFILEMANAGER_HPP
 #define PROFILEMANAGER_HPP
 
 #include <string>
 #include <set>
 #include <list>
 
-// Класс ProfileManager: Управляет профилем пользователя
+// РљР»Р°СЃСЃ ProfileManager: РЈРїСЂР°РІР»СЏРµС‚ РїСЂРѕС„РёР»РµРј РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 class ProfileManager {
 public:
-    // Перечисления для пола, целей, уровней, дней недели и оборудования
-    enum class Gender { MALE, FEMALE}; // Пол пользователя
-    enum class Goal { LOSE_WEIGHT, GAIN_MASS, HEALTH }; // Цели (похудение, набор массы, здоровье)
-    enum class Level { BEGINNER, INTERMEDIATE, ADVANCED }; // Уровень подготовки
-    enum class Weekday { MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY }; // Дни недели
-    enum class Equipment { DUMBBELLS, BARBELL, BENCH }; // Оборудование
+    // РџРµСЂРµС‡РёСЃР»РµРЅРёСЏ РґР»СЏ РїРѕР»Р°, С†РµР»РµР№, СѓСЂРѕРІРЅРµР№, РґРЅРµР№ РЅРµРґРµР»Рё Рё РѕР±РѕСЂСѓРґРѕРІР°РЅРёСЏ
+    enum class Gender { MALE, FEMALE}; // РџРѕР» РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
+    enum class Goal { LOSE_WEIGHT, GAIN_MASS, HEALTH }; // Р¦РµР»Рё (РїРѕС…СѓРґРµРЅРёРµ, РЅР°Р±РѕСЂ РјР°СЃСЃС‹, Р·РґРѕСЂРѕРІСЊРµ)
+    enum class Level { BEGINNER, INTERMEDIATE, ADVANCED }; // РЈСЂРѕРІРµРЅСЊ РїРѕРґРіРѕС‚РѕРІРєРё
+    enum class Weekday { MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY }; // Р”РЅРё РЅРµРґРµР»Рё
+    enum class Equipment { DUMBBELLS, BARBELL, BENCH }; // РћР±РѕСЂСѓРґРѕРІР°РЅРёРµ
 
-    // Оператор < для сравнения Equipment в std::includes
+    // РћРїРµСЂР°С‚РѕСЂ < РґР»СЏ СЃСЂР°РІРЅРµРЅРёСЏ Equipment РІ std::includes
     friend bool operator<(Equipment lhs, Equipment rhs) {
         return static_cast<int>(lhs) < static_cast<int>(rhs);
     }
 
-    // Конструктор: Инициализирует профиль пользователя
+    // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ: РРЅРёС†РёР°Р»РёР·РёСЂСѓРµС‚ РїСЂРѕС„РёР»СЊ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
     ProfileManager(const std::string& id, const std::string& username, int age, Gender gender, int heightCm,
         double currentWeightKg, Goal targetGoal, Level fitnessLevel,
         const std::list<Weekday>& workoutDaysPref, const std::set<Equipment>& availableEquipment,
         bool alertsEnabled);
 
-    // Деструктор: Освобождает ресурсы 
+    // Р”РµСЃС‚СЂСѓРєС‚РѕСЂ: РћСЃРІРѕР±РѕР¶РґР°РµС‚ СЂРµСЃСѓСЂСЃС‹ 
     ~ProfileManager();
 
-    // Метод: Обновляет вес пользователя
+    // РњРµС‚РѕРґ: РћР±РЅРѕРІР»СЏРµС‚ РІРµСЃ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
     void changeWeight(double newWeight);
 
-    // Метод: Изменяет цель пользователя
+    // РњРµС‚РѕРґ: РР·РјРµРЅСЏРµС‚ С†РµР»СЊ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
     void updateGoal(Goal newGoal);
 
-    // Метод: Рассчитывает индекс массы тела (BMI)
+    // РњРµС‚РѕРґ: Р Р°СЃСЃС‡РёС‚С‹РІР°РµС‚ РёРЅРґРµРєСЃ РјР°СЃСЃС‹ С‚РµР»Р° (BMI)
     double calculateBMI() const;
 
-    // Getter: Возвращает доступное оборудование
+    // Getter: Р’РѕР·РІСЂР°С‰Р°РµС‚ РґРѕСЃС‚СѓРїРЅРѕРµ РѕР±РѕСЂСѓРґРѕРІР°РЅРёРµ
     const std::set<Equipment>& getAvailableEquipment() const { return availableEquipment; }
 
 private:
-    std::string id; // Уникальный идентификатор
-    std::string username; // Имя пользователя
-    int age; // Возраст
-    Gender gender; // Пол
-    int heightCm; // Рост в см
-    double currentWeightKg; // Текущий вес в кг
-    Goal targetGoal; // Цель
-    Level fitnessLevel; // Уровень подготовки
-    std::list<Weekday> workoutDaysPref; // Предпочитаемые дни тренировок
-    std::set<Equipment> availableEquipment; // Доступное оборудование
-    bool alertsEnabled; // Включены ли уведомления
+    std::string id; // РЈРЅРёРєР°Р»СЊРЅС‹Р№ РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ
+    std::string username; // РРјСЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
+    int age; // Р’РѕР·СЂР°СЃС‚
+    Gender gender; // РџРѕР»
+    int heightCm; // Р РѕСЃС‚ РІ СЃРј
+    double currentWeightKg; // РўРµРєСѓС‰РёР№ РІРµСЃ РІ РєРі
+    Goal targetGoal; // Р¦РµР»СЊ
+    Level fitnessLevel; // РЈСЂРѕРІРµРЅСЊ РїРѕРґРіРѕС‚РѕРІРєРё
+    std::list<Weekday> workoutDaysPref; // РџСЂРµРґРїРѕС‡РёС‚Р°РµРјС‹Рµ РґРЅРё С‚СЂРµРЅРёСЂРѕРІРѕРє
+    std::set<Equipment> availableEquipment; // Р”РѕСЃС‚СѓРїРЅРѕРµ РѕР±РѕСЂСѓРґРѕРІР°РЅРёРµ
+    bool alertsEnabled; // Р’РєР»СЋС‡РµРЅС‹ Р»Рё СѓРІРµРґРѕРјР»РµРЅРёСЏ
 };
 
 #endif#pragma once

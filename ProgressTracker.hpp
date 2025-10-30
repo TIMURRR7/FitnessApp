@@ -1,30 +1,30 @@
-#ifndef PROGRESSTRACKER_HPP
+п»ї#ifndef PROGRESSTRACKER_HPP
 #define PROGRESSTRACKER_HPP
 
 #include <string>
 #include <list>
 
-// Класс ProgressTracker: Отслеживание прогресса
+// РљР»Р°СЃСЃ ProgressTracker: РћС‚СЃР»РµР¶РёРІР°РЅРёРµ РїСЂРѕРіСЂРµСЃСЃР°
 class ProgressTracker {
 public:
-    // Конструктор: Инициализирует трекер
+    // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ: РРЅРёС†РёР°Р»РёР·РёСЂСѓРµС‚ С‚СЂРµРєРµСЂ
     ProgressTracker(const std::string& userId, const std::list<std::pair<std::string, double>>& weightLog,
         const std::list<std::string>& sessionHistory, int activeStreak);
 
-    // Деструктор: Освобождает ресурсы
+    // Р”РµСЃС‚СЂСѓРєС‚РѕСЂ: РћСЃРІРѕР±РѕР¶РґР°РµС‚ СЂРµСЃСѓСЂСЃС‹
     ~ProgressTracker();
 
-    // Метод: Записывает результат сессии
+    // РњРµС‚РѕРґ: Р—Р°РїРёСЃС‹РІР°РµС‚ СЂРµР·СѓР»СЊС‚Р°С‚ СЃРµСЃСЃРёРё
     void logSessionOutcome(const std::string& outcome);
 
-    // Метод: Рассчитывает процент соблюдения плана
+    // РњРµС‚РѕРґ: Р Р°СЃСЃС‡РёС‚С‹РІР°РµС‚ РїСЂРѕС†РµРЅС‚ СЃРѕР±Р»СЋРґРµРЅРёСЏ РїР»Р°РЅР°
     double calcCompliance(const std::string& interval) const;
 
 private:
-    std::string userId; // Идентификатор пользователя
-    std::list<std::pair<std::string, double>> weightLog; // История веса (дата, вес)
-    std::list<std::string> sessionHistory; // История сессий
-    int activeStreak; // Текущий стрик
+    std::string userId; // РРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
+    std::list<std::pair<std::string, double>> weightLog; // РСЃС‚РѕСЂРёСЏ РІРµСЃР° (РґР°С‚Р°, РІРµСЃ)
+    std::list<std::string> sessionHistory; // РСЃС‚РѕСЂРёСЏ СЃРµСЃСЃРёР№
+    int activeStreak; // РўРµРєСѓС‰РёР№ СЃС‚СЂРёРє
 };
 
 #endif

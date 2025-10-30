@@ -1,31 +1,31 @@
-#ifndef EVENTPLANNER_HPP
+п»ї#ifndef EVENTPLANNER_HPP
 #define EVENTPLANNER_HPP
 
 #include <list>
 #include <string>
 #include "TrainingSession.hpp"
 
-// Класс EventPlanner: Управление календарем и напоминаниями
+// РљР»Р°СЃСЃ EventPlanner: РЈРїСЂР°РІР»РµРЅРёРµ РєР°Р»РµРЅРґР°СЂРµРј Рё РЅР°РїРѕРјРёРЅР°РЅРёСЏРјРё
 class EventPlanner {
 public:
-    // Конструктор: Инициализирует запланированные события и правила уведомлений
+    // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ: РРЅРёС†РёР°Р»РёР·РёСЂСѓРµС‚ Р·Р°РїР»Р°РЅРёСЂРѕРІР°РЅРЅС‹Рµ СЃРѕР±С‹С‚РёСЏ Рё РїСЂР°РІРёР»Р° СѓРІРµРґРѕРјР»РµРЅРёР№
     EventPlanner(const std::list<std::string>& plannedEvents, const std::string& notifyRules);
 
-    // Деструктор
+    // Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
     ~EventPlanner();
 
-    // Метод: Добавляет тренировку в расписание 
+    // РњРµС‚РѕРґ: Р”РѕР±Р°РІР»СЏРµС‚ С‚СЂРµРЅРёСЂРѕРІРєСѓ РІ СЂР°СЃРїРёСЃР°РЅРёРµ 
     std::string addToSchedule(const TrainingSession& session);
 
-    // Метод: Откладывает уведомление для события
+    // РњРµС‚РѕРґ: РћС‚РєР»Р°РґС‹РІР°РµС‚ СѓРІРµРґРѕРјР»РµРЅРёРµ РґР»СЏ СЃРѕР±С‹С‚РёСЏ
     void delayNotification(const std::string& eventId, int delayMin);
 
-    // Метод: Переносит пропущенные события
+    // РњРµС‚РѕРґ: РџРµСЂРµРЅРѕСЃРёС‚ РїСЂРѕРїСѓС‰РµРЅРЅС‹Рµ СЃРѕР±С‹С‚РёСЏ
     void rescheduleMissed();
 
 private:
-    std::list<std::string> plannedEvents; // Запланированные слоты/события
-    std::string notifyRules; // Правила напоминаний
+    std::list<std::string> plannedEvents; // Р—Р°РїР»Р°РЅРёСЂРѕРІР°РЅРЅС‹Рµ СЃР»РѕС‚С‹/СЃРѕР±С‹С‚РёСЏ
+    std::string notifyRules; // РџСЂР°РІРёР»Р° РЅР°РїРѕРјРёРЅР°РЅРёР№
 };
 
 #endif

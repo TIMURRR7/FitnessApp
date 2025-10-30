@@ -1,24 +1,24 @@
-#include "DietProgram.hpp"
+п»ї#include "DietProgram.hpp"
 
-// Конструктор: Инициализирует все поля
+// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ: РРЅРёС†РёР°Р»РёР·РёСЂСѓРµС‚ РІСЃРµ РїРѕР»СЏ
 DietProgram::DietProgram(const std::string& id, const std::string& ownerUserId, const std::string& planDate,
     const std::list<std::string>& dailyMeals, const std::string& dailyTargets)
     : id(id), ownerUserId(ownerUserId), planDate(planDate), dailyMeals(dailyMeals), dailyTargets(dailyTargets) {}
 
-// Деструктор
+// Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
 DietProgram::~DietProgram() {}
 
-// Метод: Обновляет по весу (заглушка)
+// РњРµС‚РѕРґ: РћР±РЅРѕРІР»СЏРµС‚ РїРѕ РІРµСЃСѓ (Р·Р°РіР»СѓС€РєР°)
 void DietProgram::updateForWeightShift(double weightDelta) {
-    // Изменение калорийности
+    // РР·РјРµРЅРµРЅРёРµ РєР°Р»РѕСЂРёР№РЅРѕСЃС‚Рё
 }
 
-// Метод: Возвращает суммарные нутриенты (заглушка)
+// РњРµС‚РѕРґ: Р’РѕР·РІСЂР°С‰Р°РµС‚ СЃСѓРјРјР°СЂРЅС‹Рµ РЅСѓС‚СЂРёРµРЅС‚С‹ (Р·Р°РіР»СѓС€РєР°)
 std::string DietProgram::calcDailySummary() const {
-    return "Summary"; // Пример
+    return "Summary"; // РџСЂРёРјРµСЂ
 }
 
-// Метод: Заменяет блюдо (заглушка)
+// РњРµС‚РѕРґ: Р—Р°РјРµРЅСЏРµС‚ Р±Р»СЋРґРѕ (Р·Р°РіР»СѓС€РєР°)
 void DietProgram::swapDish(const std::string& mealTime, const std::string& replacement) {
-    // Замена
+    // Р—Р°РјРµРЅР°
 }

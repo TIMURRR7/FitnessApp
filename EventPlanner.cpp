@@ -1,23 +1,23 @@
-#include "EventPlanner.hpp"
+п»ї#include "EventPlanner.hpp"
 
-// Конструктор: Инициализирует поля
+// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ: РРЅРёС†РёР°Р»РёР·РёСЂСѓРµС‚ РїРѕР»СЏ
 EventPlanner::EventPlanner(const std::list<std::string>& plannedEvents, const std::string& notifyRules)
     : plannedEvents(plannedEvents), notifyRules(notifyRules) {}
 
-// Деструктор
+// Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
 EventPlanner::~EventPlanner() {}
 
-// Метод: Добавляет в расписание (заглушка)
+// РњРµС‚РѕРґ: Р”РѕР±Р°РІР»СЏРµС‚ РІ СЂР°СЃРїРёСЃР°РЅРёРµ (Р·Р°РіР»СѓС€РєР°)
 std::string EventPlanner::addToSchedule(const TrainingSession& session) {
-    return "Scheduled"; // Пример
+    return "Scheduled"; // РџСЂРёРјРµСЂ
 }
 
-// Метод: Откладывает уведомление (заглушка)
+// РњРµС‚РѕРґ: РћС‚РєР»Р°РґС‹РІР°РµС‚ СѓРІРµРґРѕРјР»РµРЅРёРµ (Р·Р°РіР»СѓС€РєР°)
 void EventPlanner::delayNotification(const std::string& eventId, int delayMin) {
-    // Отложить
+    // РћС‚Р»РѕР¶РёС‚СЊ
 }
 
-// Метод: Переносит пропущенные занятия (заглушка)
+// РњРµС‚РѕРґ: РџРµСЂРµРЅРѕСЃРёС‚ РїСЂРѕРїСѓС‰РµРЅРЅС‹Рµ Р·Р°РЅСЏС‚РёСЏ (Р·Р°РіР»СѓС€РєР°)
 void EventPlanner::rescheduleMissed() {
-    // Перенос
+    // РџРµСЂРµРЅРѕСЃ
 }

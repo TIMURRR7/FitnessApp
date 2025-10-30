@@ -1,34 +1,34 @@
-#ifndef DIETPROGRAM_HPP
+п»ї#ifndef DIETPROGRAM_HPP
 #define DIETPROGRAM_HPP
 
 #include <string>
 #include <list>
 
-// Класс DietProgram: План питания
+// РљР»Р°СЃСЃ DietProgram: РџР»Р°РЅ РїРёС‚Р°РЅРёСЏ
 class DietProgram {
 public:
-    // Конструктор: Инициализирует план питания
+    // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ: РРЅРёС†РёР°Р»РёР·РёСЂСѓРµС‚ РїР»Р°РЅ РїРёС‚Р°РЅРёСЏ
     DietProgram(const std::string& id, const std::string& ownerUserId, const std::string& planDate,
         const std::list<std::string>& dailyMeals, const std::string& dailyTargets);
 
-    // Деструктор
+    // Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
     ~DietProgram();
 
-    // Метод: Обновляет план по изменению веса (заглушка)
+    // РњРµС‚РѕРґ: РћР±РЅРѕРІР»СЏРµС‚ РїР»Р°РЅ РїРѕ РёР·РјРµРЅРµРЅРёСЋ РІРµСЃР° (Р·Р°РіР»СѓС€РєР°)
     void updateForWeightShift(double weightDelta);
 
-    // Метод: Рассчитывает суммарные нутриенты за день (заглушка)
+    // РњРµС‚РѕРґ: Р Р°СЃСЃС‡РёС‚С‹РІР°РµС‚ СЃСѓРјРјР°СЂРЅС‹Рµ РЅСѓС‚СЂРёРµРЅС‚С‹ Р·Р° РґРµРЅСЊ (Р·Р°РіР»СѓС€РєР°)
     std::string calcDailySummary() const;
 
-    // Метод: Заменяет блюдо в плане (заглушка)
+    // РњРµС‚РѕРґ: Р—Р°РјРµРЅСЏРµС‚ Р±Р»СЋРґРѕ РІ РїР»Р°РЅРµ (Р·Р°РіР»СѓС€РєР°)
     void swapDish(const std::string& mealTime, const std::string& replacement);
 
 private:
-    std::string id; // Идентификатор
-    std::string ownerUserId; // Владелец
-    std::string planDate; // Дата плана
-    std::list<std::string> dailyMeals; // Приемы пищи
-    std::string dailyTargets; // Цели по нутриентам
+    std::string id; // РРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ
+    std::string ownerUserId; // Р’Р»Р°РґРµР»РµС†
+    std::string planDate; // Р”Р°С‚Р° РїР»Р°РЅР°
+    std::list<std::string> dailyMeals; // РџСЂРёРµРјС‹ РїРёС‰Рё
+    std::string dailyTargets; // Р¦РµР»Рё РїРѕ РЅСѓС‚СЂРёРµРЅС‚Р°Рј
 };
 
 #endif

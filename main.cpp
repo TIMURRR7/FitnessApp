@@ -1,4 +1,4 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <vector>
 #include <windows.h>
 #include <list>
@@ -16,68 +16,68 @@
 
 int main() {
     SetConsoleOutputCP(1251);
-    // 1. Статическая инициализация объектов
-    std::cout << "Тест 1: Статическая инициализация\n";
+    // 1. РЎС‚Р°С‚РёС‡РµСЃРєР°СЏ РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РѕР±СЉРµРєС‚РѕРІ
+    std::cout << "РўРµСЃС‚ 1: РЎС‚Р°С‚РёС‡РµСЃРєР°СЏ РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ\n";
     std::list<ProfileManager::Weekday> days;
     std::set<ProfileManager::Equipment> equip = { ProfileManager::Equipment::DUMBBELLS };
     ProfileManager staticUser("1", "user1", 25, ProfileManager::Gender::MALE, 190, 90.0, ProfileManager::Goal::LOSE_WEIGHT, ProfileManager::Level::BEGINNER, days, equip, true);
-    std::cout << "  Статический ProfileManager создан, BMI: " << staticUser.calculateBMI() << " (ожидается ~24.93)\n";
+    std::cout << "  РЎС‚Р°С‚РёС‡РµСЃРєРёР№ ProfileManager СЃРѕР·РґР°РЅ, BMI: " << staticUser.calculateBMI() << " (РѕР¶РёРґР°РµС‚СЃСЏ ~24.93)\n";
 
-    // 2. Динамическая инициализация с new/delete
-    std::cout << "\nТест 2: Динамическая инициализация\n";
+    // 2. Р”РёРЅР°РјРёС‡РµСЃРєР°СЏ РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ СЃ new/delete
+    std::cout << "\nРўРµСЃС‚ 2: Р”РёРЅР°РјРёС‡РµСЃРєР°СЏ РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ\n";
     std::set<Activity::MuscleGroup> muscles = { Activity::MuscleGroup::LEGS };
-    std::set<ProfileManager::Equipment> reqEquip = { ProfileManager::Equipment::DUMBBELLS }; // Используем ProfileManager::Equipment
-    Activity* dynamicActivity = new Activity("act1", "Приседания", muscles, Activity::ActivityType::STRENGTH, reqEquip, ProfileManager::Level::BEGINNER, "Описание техники");
-    std::cout << "  Динамический Activity создан, оценка длительности: " << dynamicActivity->getDurationEstimate() << " (ожидается 10)\n";
-    std::cout << "  Подходит ли упражнение пользователю: " << dynamicActivity->matchesUser(staticUser) << " (ожидается 1)\n";
-    delete dynamicActivity; // Освобождение памяти
-    std::cout << "  Динамический объект удалён\n";
+    std::set<ProfileManager::Equipment> reqEquip = { ProfileManager::Equipment::DUMBBELLS }; // РСЃРїРѕР»СЊР·СѓРµРј ProfileManager::Equipment
+    Activity* dynamicActivity = new Activity("act1", "РџСЂРёСЃРµРґР°РЅРёСЏ", muscles, Activity::ActivityType::STRENGTH, reqEquip, ProfileManager::Level::BEGINNER, "РћРїРёСЃР°РЅРёРµ С‚РµС…РЅРёРєРё");
+    std::cout << "  Р”РёРЅР°РјРёС‡РµСЃРєРёР№ Activity СЃРѕР·РґР°РЅ, РѕС†РµРЅРєР° РґР»РёС‚РµР»СЊРЅРѕСЃС‚Рё: " << dynamicActivity->getDurationEstimate() << " (РѕР¶РёРґР°РµС‚СЃСЏ 10)\n";
+    std::cout << "  РџРѕРґС…РѕРґРёС‚ Р»Рё СѓРїСЂР°Р¶РЅРµРЅРёРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЋ: " << dynamicActivity->matchesUser(staticUser) << " (РѕР¶РёРґР°РµС‚СЃСЏ 1)\n";
+    delete dynamicActivity; // РћСЃРІРѕР±РѕР¶РґРµРЅРёРµ РїР°РјСЏС‚Рё
+    std::cout << "  Р”РёРЅР°РјРёС‡РµСЃРєРёР№ РѕР±СЉРµРєС‚ СѓРґР°Р»С‘РЅ\n";
 
-    // 3. Работа с ссылками
-    std::cout << "\nТест 3: Работа с ссылками\n";
+    // 3. Р Р°Р±РѕС‚Р° СЃ СЃСЃС‹Р»РєР°РјРё
+    std::cout << "\nРўРµСЃС‚ 3: Р Р°Р±РѕС‚Р° СЃ СЃСЃС‹Р»РєР°РјРё\n";
     FitnessDatabase db;
-    FitnessDatabase& dbRef = db; // Ссылка на объект
-    Activity act("act2", "Отжимания", muscles, Activity::ActivityType::STRENGTH, reqEquip, ProfileManager::Level::INTERMEDIATE, "Описание");
+    FitnessDatabase& dbRef = db; // РЎСЃС‹Р»РєР° РЅР° РѕР±СЉРµРєС‚
+    Activity act("act2", "РћС‚Р¶РёРјР°РЅРёСЏ", muscles, Activity::ActivityType::STRENGTH, reqEquip, ProfileManager::Level::INTERMEDIATE, "РћРїРёСЃР°РЅРёРµ");
     dbRef.addActivity(act);
-    std::cout << "  Ссылка на FitnessDatabase: упражнение добавлено\n";
+    std::cout << "  РЎСЃС‹Р»РєР° РЅР° FitnessDatabase: СѓРїСЂР°Р¶РЅРµРЅРёРµ РґРѕР±Р°РІР»РµРЅРѕ\n";
 
-    // 4. Работа с указателями
-    std::cout << "\nТест 4: Работа с указателями\n";
+    // 4. Р Р°Р±РѕС‚Р° СЃ СѓРєР°Р·Р°С‚РµР»СЏРјРё
+    std::cout << "\nРўРµСЃС‚ 4: Р Р°Р±РѕС‚Р° СЃ СѓРєР°Р·Р°С‚РµР»СЏРјРё\n";
     std::list<std::string> events;
-    EventPlanner reminderSystem(events, "Ежедневные напоминания");
+    EventPlanner reminderSystem(events, "Р•Р¶РµРґРЅРµРІРЅС‹Рµ РЅР°РїРѕРјРёРЅР°РЅРёСЏ");
     EventPlanner* reminderPtr = &reminderSystem;
-    std::list<std::string> blocks = { "Блок 1", "Блок 2" };
-    TrainingSession session("sess1", "2025-10-27", 60, "Тренировка", blocks, TrainingSession::WorkoutStatus::PLANNED);
+    std::list<std::string> blocks = { "Р‘Р»РѕРє 1", "Р‘Р»РѕРє 2" };
+    TrainingSession session("sess1", "2025-10-27", 60, "РўСЂРµРЅРёСЂРѕРІРєР°", blocks, TrainingSession::WorkoutStatus::PLANNED);
     reminderPtr->addToSchedule(session);
-    std::cout << "  Указатель на EventPlanner: расписание добавлено\n";
+    std::cout << "  РЈРєР°Р·Р°С‚РµР»СЊ РЅР° EventPlanner: СЂР°СЃРїРёСЃР°РЅРёРµ РґРѕР±Р°РІР»РµРЅРѕ\n";
     reminderPtr->delayNotification("sess1", 10);
-    std::cout << "  Указатель на EventPlanner: уведомление отложено\n";
+    std::cout << "  РЈРєР°Р·Р°С‚РµР»СЊ РЅР° EventPlanner: СѓРІРµРґРѕРјР»РµРЅРёРµ РѕС‚Р»РѕР¶РµРЅРѕ\n";
 
-    // 5. Динамический массив объектов
-    std::cout << "\nТест 5: Динамический массив объектов\n";
+    // 5. Р”РёРЅР°РјРёС‡РµСЃРєРёР№ РјР°СЃСЃРёРІ РѕР±СЉРµРєС‚РѕРІ
+    std::cout << "\nРўРµСЃС‚ 5: Р”РёРЅР°РјРёС‡РµСЃРєРёР№ РјР°СЃСЃРёРІ РѕР±СЉРµРєС‚РѕРІ\n";
     std::list<TrainingSession> sessions = { session };
-    TrainingSchedule* scheduleArray = new TrainingSchedule[2]; // Динамический массив из 2 планов
+    TrainingSchedule* scheduleArray = new TrainingSchedule[2]; // Р”РёРЅР°РјРёС‡РµСЃРєРёР№ РјР°СЃСЃРёРІ РёР· 2 РїР»Р°РЅРѕРІ
     scheduleArray[0] = TrainingSchedule("plan1", "1", "2025-10-01", "2025-12-31", sessions);
-    std::cout << "  Динамический массив TrainingSchedule: план 1 создан\n";
+    std::cout << "  Р”РёРЅР°РјРёС‡РµСЃРєРёР№ РјР°СЃСЃРёРІ TrainingSchedule: РїР»Р°РЅ 1 СЃРѕР·РґР°РЅ\n";
     scheduleArray[1] = TrainingSchedule("plan2", "1", "2026-01-01", "2026-03-31", sessions);
-    std::cout << "  Динамический массив TrainingSchedule: план 2 создан\n";
+    std::cout << "  Р”РёРЅР°РјРёС‡РµСЃРєРёР№ РјР°СЃСЃРёРІ TrainingSchedule: РїР»Р°РЅ 2 СЃРѕР·РґР°РЅ\n";
     delete[] scheduleArray;
-    std::cout << "  Динамический массив удалён\n";
+    std::cout << "  Р”РёРЅР°РјРёС‡РµСЃРєРёР№ РјР°СЃСЃРёРІ СѓРґР°Р»С‘РЅ\n";
 
-    // 6. Массив динамических объектов
+    // 6. РњР°СЃСЃРёРІ РґРёРЅР°РјРёС‡РµСЃРєРёС… РѕР±СЉРµРєС‚РѕРІ
 
-    std::cout << "\nТест 6: Массив динамических объектов\n";
+    std::cout << "\nРўРµСЃС‚ 6: РњР°СЃСЃРёРІ РґРёРЅР°РјРёС‡РµСЃРєРёС… РѕР±СЉРµРєС‚РѕРІ\n";
     std::vector<DietProgram*> dietVector;
-    std::list<std::string> meal1 = { "Яблоко" };
-    std::list<std::string> meal2 = { "Апельсин" };
-    dietVector.push_back(new DietProgram("diet1", "1", "2025-10-27", meal1, "150 г"));
-    dietVector.push_back(new DietProgram("diet2", "1", "2025-10-28", meal2, "150 г"));
-    std::cout << "  Массив DietProgram: добавлено " << dietVector.size() << " объекта\n";
+    std::list<std::string> meal1 = { "РЇР±Р»РѕРєРѕ" };
+    std::list<std::string> meal2 = { "РђРїРµР»СЊСЃРёРЅ" };
+    dietVector.push_back(new DietProgram("diet1", "1", "2025-10-27", meal1, "150 Рі"));
+    dietVector.push_back(new DietProgram("diet2", "1", "2025-10-28", meal2, "150 Рі"));
+    std::cout << "  РњР°СЃСЃРёРІ DietProgram: РґРѕР±Р°РІР»РµРЅРѕ " << dietVector.size() << " РѕР±СЉРµРєС‚Р°\n";
     for (auto* item : dietVector) {
         std::string summary = item->calcDailySummary();
         std::cout << "  " << summary << "\n";
         delete item;
     }
-    std::cout << "  Массив динамических объектов очищен\n";
+    std::cout << "  РњР°СЃСЃРёРІ РґРёРЅР°РјРёС‡РµСЃРєРёС… РѕР±СЉРµРєС‚РѕРІ РѕС‡РёС‰РµРЅ\n";
     return 0;
 }

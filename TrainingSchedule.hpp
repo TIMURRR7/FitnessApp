@@ -1,4 +1,4 @@
-#ifndef TRAININGSCHEDULE_HPP
+п»ї#ifndef TRAININGSCHEDULE_HPP
 #define TRAININGSCHEDULE_HPP
 
 #include <string>
@@ -7,34 +7,34 @@
 #include "FitnessDatabase.hpp"
 #include "ProfileManager.hpp"
 
-// Класс TrainingSchedule: План тренировок на период
+// РљР»Р°СЃСЃ TrainingSchedule: РџР»Р°РЅ С‚СЂРµРЅРёСЂРѕРІРѕРє РЅР° РїРµСЂРёРѕРґ
 class TrainingSchedule {
 public:
-    // Default-конструктор: Инициализирует пустой план
+    // Default-РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ: РРЅРёС†РёР°Р»РёР·РёСЂСѓРµС‚ РїСѓСЃС‚РѕР№ РїР»Р°РЅ
     TrainingSchedule();
 
-    // Конструктор: Инициализирует план с параметрами
+    // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ: РРЅРёС†РёР°Р»РёР·РёСЂСѓРµС‚ РїР»Р°РЅ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
     TrainingSchedule(const std::string& id, const std::string& ownerUserId, const std::string& startDate,
         const std::string& endDate, const std::list<TrainingSession>& sessions);
 
-    // Деструктор: Освобождает ресурсы
+    // Р”РµСЃС‚СЂСѓРєС‚РѕСЂ: РћСЃРІРѕР±РѕР¶РґР°РµС‚ СЂРµСЃСѓСЂСЃС‹
     ~TrainingSchedule();
 
-    // Метод: Генерирует новый план на основе пользователя и библиотеки
-    TrainingSchedule createPlan(const ProfileManager& user, const FitnessDatabase& library); // Возвращает новый план
+    // РњРµС‚РѕРґ: Р“РµРЅРµСЂРёСЂСѓРµС‚ РЅРѕРІС‹Р№ РїР»Р°РЅ РЅР° РѕСЃРЅРѕРІРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ Рё Р±РёР±Р»РёРѕС‚РµРєРё
+    TrainingSchedule createPlan(const ProfileManager& user, const FitnessDatabase& library); // Р’РѕР·РІСЂР°С‰Р°РµС‚ РЅРѕРІС‹Р№ РїР»Р°РЅ
 
-    // Метод: Корректирует план на основе обратной связи 
+    // РњРµС‚РѕРґ: РљРѕСЂСЂРµРєС‚РёСЂСѓРµС‚ РїР»Р°РЅ РЅР° РѕСЃРЅРѕРІРµ РѕР±СЂР°С‚РЅРѕР№ СЃРІСЏР·Рё 
     void adjustFromFeedback(const std::string& userFeedback);
 
-    // Метод: Возвращает список предстоящих сессий
+    // РњРµС‚РѕРґ: Р’РѕР·РІСЂР°С‰Р°РµС‚ СЃРїРёСЃРѕРє РїСЂРµРґСЃС‚РѕСЏС‰РёС… СЃРµСЃСЃРёР№
     std::list<TrainingSession> listNextSessions(int count) const;
 
 private:
-    std::string id; // Идентификатор плана
-    std::string ownerUserId; // Владелец плана
-    std::string startDate; // Дата начала периода
-    std::string endDate; // Дата конца периода
-    std::list<TrainingSession> sessions; // Список тренировок
+    std::string id; // РРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ РїР»Р°РЅР°
+    std::string ownerUserId; // Р’Р»Р°РґРµР»РµС† РїР»Р°РЅР°
+    std::string startDate; // Р”Р°С‚Р° РЅР°С‡Р°Р»Р° РїРµСЂРёРѕРґР°
+    std::string endDate; // Р”Р°С‚Р° РєРѕРЅС†Р° РїРµСЂРёРѕРґР°
+    std::list<TrainingSession> sessions; // РЎРїРёСЃРѕРє С‚СЂРµРЅРёСЂРѕРІРѕРє
 };
 
 #endif

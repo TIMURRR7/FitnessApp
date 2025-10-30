@@ -1,4 +1,4 @@
-#ifndef FITNESSDATABASE_HPP
+п»ї#ifndef FITNESSDATABASE_HPP
 #define FITNESSDATABASE_HPP
 
 #include <list>
@@ -6,30 +6,30 @@
 #include "Activity.hpp"
 #include "ProfileManager.hpp"
 
-// Класс FitnessDatabase: Репозиторий упражнений
+// РљР»Р°СЃСЃ FitnessDatabase: Р РµРїРѕР·РёС‚РѕСЂРёР№ СѓРїСЂР°Р¶РЅРµРЅРёР№
 class FitnessDatabase {
 public:
-    // Конструктор: Инициализирует базу 
+    // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ: РРЅРёС†РёР°Р»РёР·РёСЂСѓРµС‚ Р±Р°Р·Сѓ 
     FitnessDatabase();
 
-    // Деструктор: Освобождает ресурсы
+    // Р”РµСЃС‚СЂСѓРєС‚РѕСЂ: РћСЃРІРѕР±РѕР¶РґР°РµС‚ СЂРµСЃСѓСЂСЃС‹
     ~FitnessDatabase();
 
-    // Метод: Поиск упражнений по названию
+    // РњРµС‚РѕРґ: РџРѕРёСЃРє СѓРїСЂР°Р¶РЅРµРЅРёР№ РїРѕ РЅР°Р·РІР°РЅРёСЋ
     std::list<Activity> findByName(const std::string& searchQuery) const;
 
-    // Метод: Фильтрация упражнений по цели, оборудованию и уровню
+    // РњРµС‚РѕРґ: Р¤РёР»СЊС‚СЂР°С†РёСЏ СѓРїСЂР°Р¶РЅРµРЅРёР№ РїРѕ С†РµР»Рё, РѕР±РѕСЂСѓРґРѕРІР°РЅРёСЋ Рё СѓСЂРѕРІРЅСЋ
     std::list<Activity> filterActivities(ProfileManager::Goal targetGoal, const std::set<ProfileManager::Equipment>& equip, ProfileManager::Level lvl) const;
 
-    // Метод: Добавляет новое упражнение
+    // РњРµС‚РѕРґ: Р”РѕР±Р°РІР»СЏРµС‚ РЅРѕРІРѕРµ СѓРїСЂР°Р¶РЅРµРЅРёРµ
     void addActivity(const Activity& newActivity);
 
-    // Метод: Обновляет всю библиотеку упражнений
+    // РњРµС‚РѕРґ: РћР±РЅРѕРІР»СЏРµС‚ РІСЃСЋ Р±РёР±Р»РёРѕС‚РµРєСѓ СѓРїСЂР°Р¶РЅРµРЅРёР№
     void updateLibrary(const std::list<Activity>& newActivities);
 
 private:
-    std::list<Activity> activities; // Список упражнений
-    std::string updateTimestamp; // Дата последнего обновления
+    std::list<Activity> activities; // РЎРїРёСЃРѕРє СѓРїСЂР°Р¶РЅРµРЅРёР№
+    std::string updateTimestamp; // Р”Р°С‚Р° РїРѕСЃР»РµРґРЅРµРіРѕ РѕР±РЅРѕРІР»РµРЅРёСЏ
 };
 
 #endif

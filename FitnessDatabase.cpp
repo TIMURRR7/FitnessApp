@@ -1,30 +1,30 @@
-#include "FitnessDatabase.hpp"
+п»ї#include "FitnessDatabase.hpp"
 
-// Конструктор: Устанавливает дату обновления по умолчанию
+// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ: РЈСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ РґР°С‚Сѓ РѕР±РЅРѕРІР»РµРЅРёСЏ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 FitnessDatabase::FitnessDatabase() : updateTimestamp("2025-10-21") {}
 
-// Деструктор
+// Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
 FitnessDatabase::~FitnessDatabase() {}
 
-// Метод: Поиск по названию (заглушка)
+// РњРµС‚РѕРґ: РџРѕРёСЃРє РїРѕ РЅР°Р·РІР°РЅРёСЋ (Р·Р°РіР»СѓС€РєР°)
 std::list<Activity> FitnessDatabase::findByName(const std::string& searchQuery) const {
     std::list<Activity> result;
     return result;
 }
 
-// Метод: Фильтрация (заглушка)
+// РњРµС‚РѕРґ: Р¤РёР»СЊС‚СЂР°С†РёСЏ (Р·Р°РіР»СѓС€РєР°)
 std::list<Activity> FitnessDatabase::filterActivities(ProfileManager::Goal targetGoal, const std::set<ProfileManager::Equipment>& equip, ProfileManager::Level lvl) const {
     std::list<Activity> result;
-    // Фильтрация
+    // Р¤РёР»СЊС‚СЂР°С†РёСЏ
     return result;
 }
 
-// Метод: Добавляет упражнение
+// РњРµС‚РѕРґ: Р”РѕР±Р°РІР»СЏРµС‚ СѓРїСЂР°Р¶РЅРµРЅРёРµ
 void FitnessDatabase::addActivity(const Activity& newActivity) {
     activities.push_back(newActivity);
 }
 
-// Метод: Обновляет библиотеку
+// РњРµС‚РѕРґ: РћР±РЅРѕРІР»СЏРµС‚ Р±РёР±Р»РёРѕС‚РµРєСѓ
 void FitnessDatabase::updateLibrary(const std::list<Activity>& newActivities) {
     activities = newActivities;
 }

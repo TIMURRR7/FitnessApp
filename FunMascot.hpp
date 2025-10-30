@@ -1,4 +1,4 @@
-#ifndef FUNMASCOT_HPP
+п»ї#ifndef FUNMASCOT_HPP
 #define FUNMASCOT_HPP
 
 #include <string>
@@ -7,32 +7,32 @@
 #include "ProgressTracker.hpp"
 #include "TrainingSession.hpp" 
 
-// Класс FunMascot: Логика маскота (котика)
+// РљР»Р°СЃСЃ FunMascot: Р›РѕРіРёРєР° РјР°СЃРєРѕС‚Р° (РєРѕС‚РёРєР°)
 class FunMascot {
 public:
-    enum class MascotMood { HAPPY, SAD, MOTIVATED }; // Настроение маскота
+    enum class MascotMood { HAPPY, SAD, MOTIVATED }; // РќР°СЃС‚СЂРѕРµРЅРёРµ РјР°СЃРєРѕС‚Р°
 
-    // Конструктор: Инициализирует маскота
+    // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ: РРЅРёС†РёР°Р»РёР·РёСЂСѓРµС‚ РјР°СЃРєРѕС‚Р°
     FunMascot(const std::string& userId, MascotMood currentMood, int experiencePoints,
         const std::set<std::string>& unlockedSkins);
 
-    // Деструктор
+    // Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
     ~FunMascot();
 
-    // Метод: Реакция на статус тренировки
+    // РњРµС‚РѕРґ: Р РµР°РєС†РёСЏ РЅР° СЃС‚Р°С‚СѓСЃ С‚СЂРµРЅРёСЂРѕРІРєРё
     std::string respondToSession(TrainingSession::WorkoutStatus outcome) const;
 
-    // Метод: Начисляет очки опыта
+    // РњРµС‚РѕРґ: РќР°С‡РёСЃР»СЏРµС‚ РѕС‡РєРё РѕРїС‹С‚Р°
     void addExperience(int points);
 
-    // Метод: Генерирует мотивационное сообщение
+    // РњРµС‚РѕРґ: Р“РµРЅРµСЂРёСЂСѓРµС‚ РјРѕС‚РёРІР°С†РёРѕРЅРЅРѕРµ СЃРѕРѕР±С‰РµРЅРёРµ
     std::string generateMotivation(const ProfileManager& user, const ProgressTracker& tracker) const;
 
 private:
-    std::string userId; // Идентификатор пользователя
-    MascotMood currentMood; // Текущее настроение
-    int experiencePoints; // Очки опыта
-    std::set<std::string> unlockedSkins; // Разблокированные скины
+    std::string userId; // РРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
+    MascotMood currentMood; // РўРµРєСѓС‰РµРµ РЅР°СЃС‚СЂРѕРµРЅРёРµ
+    int experiencePoints; // РћС‡РєРё РѕРїС‹С‚Р°
+    std::set<std::string> unlockedSkins; // Р Р°Р·Р±Р»РѕРєРёСЂРѕРІР°РЅРЅС‹Рµ СЃРєРёРЅС‹
 };
 
 #endif

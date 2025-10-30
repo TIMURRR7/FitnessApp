@@ -1,28 +1,28 @@
-#include "TrainingSchedule.hpp"
+п»ї#include "TrainingSchedule.hpp"
 
-// Default-конструктор: Инициализирует пустыми значениями
+// Default-РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ: РРЅРёС†РёР°Р»РёР·РёСЂСѓРµС‚ РїСѓСЃС‚С‹РјРё Р·РЅР°С‡РµРЅРёСЏРјРё
 TrainingSchedule::TrainingSchedule() : id(""), ownerUserId(""), startDate(""), endDate(""), sessions({}) {}
 
-// Конструктор: Инициализирует все поля
+// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ: РРЅРёС†РёР°Р»РёР·РёСЂСѓРµС‚ РІСЃРµ РїРѕР»СЏ
 TrainingSchedule::TrainingSchedule(const std::string& id, const std::string& ownerUserId, const std::string& startDate,
     const std::string& endDate, const std::list<TrainingSession>& sessions)
     : id(id), ownerUserId(ownerUserId), startDate(startDate), endDate(endDate), sessions(sessions) {}
 
-// Деструктор: Пустой
+// Р”РµСЃС‚СЂСѓРєС‚РѕСЂ: РџСѓСЃС‚РѕР№
 TrainingSchedule::~TrainingSchedule() {}
 
-// Метод: Генерирует план (заглушка, возвращает копию текущего)
+// РњРµС‚РѕРґ: Р“РµРЅРµСЂРёСЂСѓРµС‚ РїР»Р°РЅ (Р·Р°РіР»СѓС€РєР°, РІРѕР·РІСЂР°С‰Р°РµС‚ РєРѕРїРёСЋ С‚РµРєСѓС‰РµРіРѕ)
 TrainingSchedule TrainingSchedule::createPlan(const ProfileManager& user, const FitnessDatabase& library) {
-    // Генерация плана
-    return *this; // Пример
+    // Р“РµРЅРµСЂР°С†РёСЏ РїР»Р°РЅР°
+    return *this; // РџСЂРёРјРµСЂ
 }
 
-// Метод: Корректировка(заглушка)
+// РњРµС‚РѕРґ: РљРѕСЂСЂРµРєС‚РёСЂРѕРІРєР°(Р·Р°РіР»СѓС€РєР°)
 void TrainingSchedule::adjustFromFeedback(const std::string& userFeedback) {
-    // Корректировка
+    // РљРѕСЂСЂРµРєС‚РёСЂРѕРІРєР°
 }
 
-// Метод: Возвращает предстоящие сессии (заглушка)
+// РњРµС‚РѕРґ: Р’РѕР·РІСЂР°С‰Р°РµС‚ РїСЂРµРґСЃС‚РѕСЏС‰РёРµ СЃРµСЃСЃРёРё (Р·Р°РіР»СѓС€РєР°)
 std::list<TrainingSession> TrainingSchedule::listNextSessions(int count) const {
     std::list<TrainingSession> result;
     return result;
