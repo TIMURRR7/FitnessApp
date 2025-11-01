@@ -28,3 +28,4 @@ void FitnessDatabase::addActivity(const Activity& newActivity) {
 void FitnessDatabase::updateLibrary(const std::list<Activity>& newActivities) {
     activities = newActivities;
 }
+
