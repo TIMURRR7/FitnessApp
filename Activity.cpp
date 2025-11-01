@@ -21,3 +21,4 @@ bool Activity::matchesUser(const ProfileManager& user) const {
 int Activity::getDurationEstimate() const {
     return 10; // Примерное значение
 }
+
