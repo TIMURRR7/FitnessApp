@@ -55,4 +55,4 @@ private:
     bool alertsEnabled; // Включены ли уведомления
 };
 
-#endif#pragma once
+#endif
