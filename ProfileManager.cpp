@@ -28,3 +28,4 @@ double ProfileManager::calculateBMI() const {
     double heightM = heightCm / 100.0;
     return currentWeightKg / (heightM * heightM);
 }
+
